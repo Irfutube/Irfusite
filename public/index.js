@@ -21,7 +21,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth(app);
+const auth = getAuth();
 
 var email = document.getElementById('email').value;
 var password = document.getElementById('password').value;
@@ -30,11 +30,11 @@ function register(){
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    alert("account created sucessfully!")
+    alert("account created sucessfully!");
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert(errorMessage)
+    alert(errorMessage);
   });
 }
